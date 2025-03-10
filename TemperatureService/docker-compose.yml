@@ -1,0 +1,17 @@
+﻿services:
+  temperature-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "1900:1900"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://0.0.0.0:1900
+    networks:
+      - app_network
+
+
+networks:
+  app_network:
+    driver: bridge
