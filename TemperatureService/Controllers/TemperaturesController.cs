@@ -26,7 +26,7 @@ namespace TemperatureService.Controllers {
             }
         }
 
-        [HttpGet]
+        [HttpGet("newest")]
         public ActionResult<Temperature> Get() {
             Temperature? temp = _temperatureControl.Get();
             
